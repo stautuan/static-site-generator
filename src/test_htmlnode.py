@@ -1,6 +1,6 @@
 import unittest
 
-from htmlnode import HTMLNode
+from htmlnode import HTMLNode, LeafNode
 
 
 class TestHTMLNode(unittest.TestCase):
@@ -9,6 +9,10 @@ class TestHTMLNode(unittest.TestCase):
                         "href": "https://www.google.com", "target": "_blank"})
         self.assertEqual(node.props_to_html(),
                          ' href="https://www.google.com" target="_blank"')
+
+    def test_no_tag(self):
+        node = LeafNode(None, "Knowledge is power")
+        self.assertEqual(node.to_html(), "Knowledge is power")
 
 
 if __name__ == "__main__":
