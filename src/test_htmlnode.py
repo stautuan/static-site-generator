@@ -5,10 +5,8 @@ from htmlnode import HTMLNode, LeafNode, ParentNode
 
 class TestHTMLNode(unittest.TestCase):
     def test_props_to_html(self):
-        node = HTMLNode("a", "Click Me", None, {
-                        "href": "https://www.google.com", "target": "_blank"})
-        self.assertEqual(node.props_to_html(),
-                         ' href="https://www.google.com" target="_blank"')
+        node = HTMLNode("a", "Click Me", None, {"href": "https://www.google.com", "target": "_blank"})
+        self.assertEqual(node.props_to_html(), ' href="https://www.google.com" target="_blank"')
 
     def test_no_tag(self):
         node = LeafNode(None, "Knowledge is power")
